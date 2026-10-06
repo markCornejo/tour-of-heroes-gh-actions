@@ -1,0 +1,19 @@
+name: 🤫 Secrets
+
+on:
+  workflow_dispatch:
+
+env:
+  CHECK_SECRET: ${{ secrets.CHECK_SECRET }}
+
+jobs:
+  testing_secrets:
+    name: Testing secrets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: My first secret
+        run: echo ${{ secrets.MY_SECRET }}
+      - name: Check secret
+        if: env.CHECK_SECRET == 'true'
+        run: echo "The secret has true value"
