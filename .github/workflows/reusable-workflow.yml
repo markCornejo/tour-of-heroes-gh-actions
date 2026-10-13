@@ -30,7 +30,7 @@ jobs:
       run: |
         echo "SALUDABA ${{ inputs.greeting }}"
         echo "EL SECRETO ERA ${{ secrets.MY_SECRET }}"
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
